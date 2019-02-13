@@ -6,11 +6,12 @@ const app = express();
 
 if (process.env.ENV === 'Test') {
   console.log('This is a test');
-  const db = mongoose.connect('mongodb://localhost/bookAPI_Test', { useNewUrlParser: true });
+  const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
 } else {
-  console.log('This is the prod db');
-  const db = mongoose.connect('mongodb://localhost/bookAPI_Prod', { useNewUrlParser: true });
+  console.log('This is for real');
+  const db = mongoose.connect('mongodb://localhost/bookAPI-prod');
 }
+
 
 const port = process.env.PORT || 3000;
 const Book = require('./models/bookModel');
@@ -25,6 +26,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to my Nodemon API!');
 });
 
-app.listen(port, () => {
+app.server = app.listen(port, () => {
   console.log(`Running on port ${port}`);
 });
+
+module.exports = app;

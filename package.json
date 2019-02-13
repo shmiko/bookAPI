@@ -1,7 +1,8 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint app.js",
     "start": "nodemon app.js",
@@ -9,21 +10,20 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.7",
-    "nodemon": "^1.18.9"
+    "mongoose": "^5.3.10",
+    "nodemon": "^1.18.5"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
     "should": "^13.2.3",
-    "sinon": "^7.2.3",
-    "supertest": "^3.4.2"
+    "sinon": "^7.2.2",
+    "supertest": "^3.3.0"
   },
   "nodemonConfig": {
     "restartable": "rs",
