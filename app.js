@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+/* eslint-disable spaced-comment */
+/* eslint-disable no-unused-vars */
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,7 +13,7 @@ if (process.env.ENV === 'Test') {
   //using localhost instead of 127.0.0.1 causes a mongoose error when running tests
 } else {
   console.log('This is for real');
-  const db = mongoose.connect('mongodb://127.0.0.1/bookAPI-prod');
+  const db = mongoose.connect('mongodb://127.0.0.1/bookAPI');
 }
 
 
