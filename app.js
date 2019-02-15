@@ -6,10 +6,11 @@ const app = express();
 
 if (process.env.ENV === 'Test') {
   console.log('This is a test');
-  const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
+  const db = mongoose.connect('mongodb://127.0.0.1/bookAPI_Test');
+  //using localhost instead of 127.0.0.1 causes a mongoose error when running tests
 } else {
   console.log('This is for real');
-  const db = mongoose.connect('mongodb://localhost/bookAPI-prod');
+  const db = mongoose.connect('mongodb://127.0.0.1/bookAPI-prod');
 }
 
 

@@ -11,15 +11,17 @@ const Book = mongoose.model('Book');
 const agent = request.agent(app);
 
 describe('Book Crud Test', () => {
-  it('should allow a book to be posted and return read and _it', (done) => {
+  it('should allow a book to be posted and return read and _id', (done) => {
     const bookPost = { title: 'My Book', author: 'Jon', genre: 'Fiction' };
+
+    // console.log(bookPost);
 
     agent.post('/api/books')
       .send(bookPost)
       .expect(200)
       .end((err, results) => {
-        //console.log(results);
-        //results.body.read.should.not.equal(false);
+        // console.log(results.body);
+        // results.body.read.should.not.equal(true);
         results.body.should.have.property('_id');
         done();
       });
